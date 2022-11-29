@@ -8,7 +8,12 @@
   </head>
   <body>
     <div class="container">
-      <div id="teks"></div>
+      <div>
+        <h2 id="teks">anda belum menekan tombol</h2>
+        <h2 id="tulisan" hidden>
+          anda menekan tombol sebanyak <span id="count">0</span> kali
+        </h2>
+      </div>
       <div id="button">
         <button type="submit">tekan ini</button>
       </div>
@@ -19,9 +24,9 @@
     const teks = document.getElementById("teks");
 
     coba.addEventListener("click", () => {
-      let newElement = document.createElement("h2");
-      newElement.innerText = "Yahah hayuuk";
-      teks.appendChild(newElement);
+      document.getElementById("count").innerText++;
+      document.getElementById("tulisan").removeAttribute("hidden");
+      teks.setAttribute("hidden", true);
     });
   </script>
 </html>
